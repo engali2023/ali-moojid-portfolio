@@ -15,8 +15,8 @@ const content: Record<string, any> = {
       'project-ai': { eyebrow: 'CASE STUDY / 01', title: 'AI VISUAL STUDIO.', label: 'First project', body: 'A cinematic content workflow turning concepts into storyboards, visual prompts, and polished short-form video.', tags: ['Generative AI','Storyboarding','Video Production'] },
       'project-data': { eyebrow: 'CASE STUDY / 02', title: 'DATA & INSIGHTS.', label: 'Second project', body: 'A data-focused toolkit for transforming raw social and business metrics into clear, decision-ready insights.', tags: ['Python','Analytics','Reporting'] },
       'project-web': { eyebrow: 'CASE STUDY / 03', title: 'SMART WEB TOOLS.', label: 'Third project', body: 'Practical digital products connecting intelligent APIs, automated workflows, and thoughtful interface design.', tags: ['Web Development','Automation','Applied AI'] },
-      expertise: { eyebrow: '05 / CAPABILITIES', title: 'WHAT I BRING.', label: 'Engineering meets creativity', items: ['Software development with Python','Data analysis and visualization','Applied AI and generative workflows','Video editing and motion graphics','Digital storytelling and creative direction'], body: 'Capability statements are presented here; verified client testimonials can be added when available.' },
-      contact: { eyebrow: '06 / CONTACT', title: 'THANK YOU.', label: "Let's build something meaningful", body: "Have an idea, a challenge, or a project in mind? Let's turn it into something remarkable.", tags: ['Email: ali.moojid@gmail.com','GitHub: engali2023'] }
+      expertise: { eyebrow: '05 / CAPABILITIES', title: 'WHAT I BRING.', label: 'Engineering meets creativity', items: ['Software development with Python','Data analysis and visualization','Applied AI and generative workflows','Video editing and motion graphics','Digital storytelling and creative direction'], body: 'A practical blend of engineering, analytical thinking, and creative production.' },
+      contact: { eyebrow: '06 / CONTACT', title: 'THANK YOU.', label: "Let's build something meaningful", body: "Have an idea, a challenge, or a project in mind? Let's turn it into something remarkable.", tags: ['GitHub: engali2023'] }
     },
     nav: ['Cover','About','Experience','Education','Projects','AI Visual Studio','Data & Insights','Smart Web Tools','Expertise','Contact'], prev: 'Previous', next: 'Next', home: 'Language selection', footer: 'ENGINEERING × DATA × AI × VISUAL STORYTELLING'
   },
@@ -31,8 +31,8 @@ const content: Record<string, any> = {
       'project-ai': { eyebrow: 'المشروع / 01', title: 'استوديو بصري بالذكاء الاصطناعي', label: 'المشروع الأول', body: 'سير عمل بصري سينمائي يحوّل الأفكار إلى سيناريوهات ولوحات قصصية وبرومبتات وصناعة فيديو قصير متكامل.', tags: ['ذكاء اصطناعي توليدي','ستوري بورد','إنتاج الفيديو'] },
       'project-data': { eyebrow: 'المشروع / 02', title: 'البيانات والرؤى', label: 'المشروع الثاني', body: 'أدوات تحليلية لتحويل بيانات الأداء والأعمال إلى مؤشرات واضحة تساعد على فهم النتائج واتخاذ القرارات.', tags: ['Python','تحليل البيانات','التقارير'] },
       'project-web': { eyebrow: 'المشروع / 03', title: 'أدوات ويب ذكية', label: 'المشروع الثالث', body: 'حلول رقمية عملية تجمع واجهات البرمجة الذكية وأتمتة العمليات وتصميم تجارب استخدام واضحة.', tags: ['تطوير الويب','الأتمتة','الذكاء الاصطناعي'] },
-      expertise: { eyebrow: '05 / ما أقدّمه', title: 'المهارات الأساسية', label: 'الهندسة تلتقي بالإبداع', items: ['تطوير البرمجيات باستخدام Python','تحليل البيانات وتصويرها','تطبيقات الذكاء الاصطناعي التوليدي','المونتاج والموشن جرافيك','السرد البصري والإخراج الإبداعي'], body: 'يمكن إضافة شهادات وآراء العملاء الحقيقية عند توفرها.' },
-      contact: { eyebrow: '06 / تواصل', title: 'شكرًا لك', label: 'لنبنِ شيئًا مميزًا معًا', body: 'هل لديك فكرة أو تحدٍ أو مشروع؟ لنحوّله معًا إلى تجربة رقمية مميزة.', tags: ['البريد: ali.moojid@gmail.com','GitHub: engali2023'] }
+      expertise: { eyebrow: '05 / ما أقدّمه', title: 'المهارات الأساسية', label: 'الهندسة تلتقي بالإبداع', items: ['تطوير البرمجيات باستخدام Python','تحليل البيانات وتصويرها','تطبيقات الذكاء الاصطناعي التوليدي','المونتاج والموشن جرافيك','السرد البصري والإخراج الإبداعي'], body: 'أجمع بين التفكير الهندسي والتحليل الدقيق والإنتاج الإبداعي لبناء حلول رقمية مؤثرة.' },
+      contact: { eyebrow: '06 / تواصل', title: 'شكرًا لك', label: 'لنبنِ شيئًا مميزًا معًا', body: 'هل لديك فكرة أو تحدٍ أو مشروع؟ لنحوّله معًا إلى تجربة رقمية مميزة.', tags: ['GitHub: engali2023'] }
     },
     nav: ['الغلاف','نبذة عني','الخبرات','التعليم','المشاريع','استوديو الذكاء الاصطناعي','تحليل البيانات','أدوات الويب','المهارات','التواصل'], prev: 'السابق', next: 'التالي', home: 'اختيار اللغة', footer: 'الهندسة × البيانات × الذكاء الاصطناعي × السرد البصري'
   }
@@ -68,7 +68,7 @@ export default function PortfolioPage({ params }: { params: { lang: string; page
         {p.items && <div className="standalone-items">{p.items.map((item: any, i: number) => Array.isArray(item) ? <div className="timeline-item" key={i}><span>{item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p></div> : <div className="skill-item" key={i}><span>✳</span>{item}</div>)}</div>}
         {p.tags && <div className="standalone-tags">{p.tags.map((tag: string) => <span key={tag}>{tag}</span>)}</div>}
         {params.page === 'projects' && <div className="project-link-list"><Link href={`/${params.lang}/project-ai`}>{d.nav[5]} ↗</Link><Link href={`/${params.lang}/project-data`}>{d.nav[6]} ↗</Link><Link href={`/${params.lang}/project-web`}>{d.nav[7]} ↗</Link></div>}
-        {params.page === 'contact' && <div className="standalone-tags"><a href="mailto:ali.moojid@gmail.com">✉ {d.langName === 'العربية' ? 'راسلني بالبريد' : 'Email me'}</a><a href="https://github.com/engali2023" target="_blank" rel="noreferrer">GitHub ↗</a></div>}
+        {params.page === 'contact' && <div className="standalone-tags"><a href="https://github.com/engali2023" target="_blank" rel="noreferrer">GitHub ↗</a></div>}
       </div>
       {!isCover && <div className="standalone-watermark">AM / 2026</div>}
       {isCover && <div className="cover-footer"><span>ENG. ALI MOOJID ABBAS</span><span>{p.sub || 'Creative Technologist'}</span></div>}

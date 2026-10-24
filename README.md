@@ -1,42 +1,25 @@
 # Ali Moojid Abbas Portfolio
 
-Bilingual personal portfolio for Eng. Ali Moojid Abbas, built with Next.js 14, React, TypeScript, and Tailwind CSS.
+Bilingual, multi-page personal portfolio built with Next.js 14, React, TypeScript, Tailwind CSS, and Framer Motion.
 
-## Separate pages (not a collage)
-
-- `/` — language selection page (Arabic / English)
-- `/ar/cover` — Arabic cover
-- `/en/cover` — English cover
-- Each section is a separate page with its own URL in both languages:
-  `about`, `experience`, `education`, `projects`, `project-ai`, `project-data`, `project-web`, `expertise`, `contact`.
-
-Use the navigation controls on each page to move between sections. The language switch changes to the equivalent portfolio language.
-
-## Portrait
-
-The portrait at `public/images/ali-moojid.jpg` has been replaced with the newly supplied black-and-white portrait. The cover pages use this image.
+## Features
+- Separate Arabic (`/ar/...`) and English (`/en/...`) pages, with language selection on the home page.
+- Dedicated pages for cover, about, experience, education, projects, expertise, and contact.
+- Updated personal portrait in `public/images/ali-moojid.jpg`.
+- Animated page entrances and refined hover transitions using Framer Motion and CSS.
+- Email address and email contact action removed; contact page links to GitHub only.
+- Removed the placeholder sentence about adding testimonials later.
 
 ## Run locally
-
 ```bash
 npm install
 npm run dev
 ```
 
+Production build:
+```bash
+npm run build
+```
+
 ## Thmanyah Serif Display
-
-The styles are configured to use `Thmanyah Serif Display` for Arabic and selected editorial labels. To load the exact typeface, add your licensed font file here:
-
-`public/fonts/ThmanyahSerifDisplay.woff2`
-
-Until the font file is added, the browser uses the fallback fonts.
-
-## Deploy to Vercel
-
-- Framework preset: Next.js
-- Root directory: `./` (the directory containing `package.json`)
-- Build command: `npm run build`
-- Output directory: default
-- Install command: default
-
-Commit and push the project files to the connected GitHub branch; Vercel should redeploy automatically.
+The CSS is configured to load the font from `public/fonts/ThmanyahSerifDisplay.woff2` and optionally `public/fonts/ThmanyahSerifDisplay-Italic.woff2`. The font files themselves were not provided, so add your licensed WOFF2 files to that folder for the exact typeface to display. Until then, the browser uses the listed fallback fonts.
