@@ -1,18 +1,28 @@
-# Ali Moojid Abbas Portfolio
+# Ali Moojid Abbas — Cinematic Studio Portfolio
 
-Bilingual Arabic/English personal portfolio built with Next.js 14, React, Tailwind CSS, and Framer Motion.
+A bilingual (Arabic RTL / English LTR) multi-page portfolio built with Next.js 14, Tailwind CSS, and Framer Motion.
 
-## Run locally
+## Cinematic art direction
+- Dark studio / screening-room palette with ivory typography and restrained deep-red accents.
+- Film perforation rails and subtle grain texture.
+- Clapperboard scene labels on each page.
+- Contextual Lucide icons for introduction, experience, education, projects, analytics, web tools, expertise, and contact.
+- Responsive layout for desktop, tablet, and mobile.
+- Existing portrait is preserved at `public/images/ali-moojid.jpg`.
+- Thmanyah font stylesheet is linked from the app layout; add a licensed local font file if you prefer self-hosting.
 
+## Routes
+- `/` — language selector
+- `/ar/cover` and `/en/cover` — portfolio covers
+- Other sections each have their own route under `/ar/` and `/en/`.
+
+## Local development
 ```bash
 npm install
 npm run dev
 ```
 
-## Typography
-
-The Arabic pages use **Thmanyah Serif Display** via the `@dawod/thmanyah-font-web` CDN stylesheet linked in `src/app/layout.tsx`. This requires an internet connection in visitors' browsers. If you prefer another permitted distribution method, replace that stylesheet link with your licensed font provider's CSS.
-
-## Deploy to Vercel
-
-Import the GitHub repository and keep the framework preset as Next.js. Build command: `npm run build`. Leave Output Directory at the Next.js default.
+## Production build
+```bash
+npm run build
+```

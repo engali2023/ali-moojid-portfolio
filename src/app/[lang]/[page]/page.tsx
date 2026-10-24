@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import { Aperture, Briefcase, Camera, BarChart3, Clapperboard, Code, Contact, Film, GraduationCap, Layers, Lightbulb, Workflow } from 'lucide-react';
 
 const sections = ['cover','about','experience','education','projects','project-ai','project-data','project-web','expertise','contact'];
 const content: Record<string, any> = {
@@ -55,12 +56,17 @@ export default function PortfolioPage({ params }: { params: { lang: string; page
   const prev = sections[(idx - 1 + sections.length) % sections.length];
   const next = sections[(idx + 1) % sections.length];
   const isCover = params.page === 'cover';
-  return <main className="single-page-shell" dir={d.dir}>
+  const PageIcon = ({ cover: Aperture, about: Lightbulb, experience: Briefcase, education: GraduationCap, projects: Layers, 'project-ai': Camera, 'project-data': BarChart3, 'project-web': Code, expertise: Workflow, contact: Contact } as Record<string, any>)[params.page] || Film;
+  return <main className="single-page-shell studio-shell" dir={d.dir}>
+    <div className="film-perforation film-perforation-left" aria-hidden="true">{Array.from({length: 18}, (_, i) => <span key={i} />)}</div>
+    <div className="film-perforation film-perforation-right" aria-hidden="true">{Array.from({length: 18}, (_, i) => <span key={i} />)}</div>
     <header className="page-topbar"><Link href={`/${params.lang}/cover`} className="brand-mini">ALI MOOJID ABBAS <span>·</span> {d.langName}</Link><div className="top-actions"><span>{String(idx + 1).padStart(2,'0')} / {String(sections.length).padStart(2,'0')}</span><Link href={d.switchHref}>{d.switchLabel}</Link></div></header>
     <article className={`standalone-card ${isCover || params.page === 'projects' || params.page === 'contact' ? 'standalone-red' : 'standalone-paper'} ${isCover ? 'standalone-cover' : ''}`}>
+      <div className="studio-scene-label"><Clapperboard size={18} strokeWidth={1.5} /><span>{params.page === 'cover' ? 'OPENING SHOT' : `SCENE ${String(idx + 1).padStart(2, '0')}`}</span><i /></div>
       {isCover && <div className="standalone-photo"><Image src="/images/ali-moojid.jpg" alt={d.langName === 'العربية' ? 'صورة المهندس علي موجد عباس' : 'Portrait of Eng. Ali Moojid Abbas'} fill priority sizes="(max-width: 700px) 80vw, 420px"/></div>}
       <div className="standalone-index">{p.eyebrow}</div>
       <div className="standalone-main">
+        <div className="section-emblem" aria-hidden="true"><PageIcon size={25} strokeWidth={1.35} /><span>{String(idx + 1).padStart(2,'0')}</span></div>
         <span className="standalone-script">{p.label}</span>
         <h1>{p.title}</h1>
         {p.sub && <h2 className="standalone-subtitle">{p.sub}</h2>}
@@ -75,6 +81,6 @@ export default function PortfolioPage({ params }: { params: { lang: string; page
     </article>
     <nav className="page-navigation"><Link href={`/${params.lang}/${prev}`}>← {d.prev}</Link><Link href={`/${params.lang}/cover`} className="nav-home">{d.home}</Link><Link href={`/${params.lang}/${next}`}>{d.next} →</Link></nav>
     <div className="page-index-links">{sections.map((s, i) => <Link key={s} href={`/${params.lang}/${s}`} aria-label={d.nav[i]} title={d.nav[i]} className={s === params.page ? 'active' : ''}>{String(i+1).padStart(2,'0')}</Link>)}</div>
-    <footer className="single-footer"><span>ALI MOOJID ABBAS</span><span>{d.footer}</span></footer>
+    <footer className="single-footer"><span><Film size={13} strokeWidth={1.5} /> ALI MOOJID ABBAS</span><span>{d.footer}</span></footer>
   </main>;
 }
