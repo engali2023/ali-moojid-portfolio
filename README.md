@@ -1,6 +1,13 @@
-# Ali Moojid Abbas — Portfolio
+# Ali Moojid Abbas Portfolio
 
-A responsive Next.js 14 + Tailwind CSS + Framer Motion portfolio inspired by the supplied red-and-beige presentation. Includes your supplied portrait, textured cards, editorial typography, project galleries, sticky section dots, Arabic bio, and contact section.
+Bilingual portfolio for Eng. Ali Moojid Abbas, built with Next.js 14, React, TypeScript, Tailwind CSS and Framer Motion dependencies.
+
+## Separate pages
+
+- `/` — language selection
+- `/ar/cover` — Arabic portfolio cover
+- `/en/cover` — English portfolio cover
+- Each portfolio section has its own route in both languages: `about`, `experience`, `education`, `projects`, `project-ai`, `project-data`, `project-web`, `expertise`, `contact`.
 
 ## Run locally
 
@@ -9,19 +16,10 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000
+## Thmanyah Serif Display font
 
-## Personalize before publishing
+The styles are configured to use `Thmanyah Serif Display` from `/fonts/ThmanyahSerifDisplay.woff2`. Add your licensed `.woff2` font file at `public/fonts/ThmanyahSerifDisplay.woff2` to activate the exact font. Until the file is added, the browser uses the specified serif fallbacks.
 
-- Replace the sample project descriptions/images with your real projects.
-- Replace the capability-style testimonial cards with real testimonials (the current cards are explicitly labeled as sample statements).
-- Update the email and social URLs in `src/app/page.tsx`.
-- The requested **Thmanyah Serif Display** font is referenced as a preferred fallback for the script/Arabic styles. To use the actual font, add a licensed font file under `public/fonts/` and define it with `@font-face` in `src/app/globals.css`.
-- Project gallery photos use Unsplash source URLs and need an internet connection. Your portrait is bundled locally at `public/images/ali-moojid.jpg`.
+## Deploy
 
-## Build
-
-```bash
-npm run build
-npm start
-```
+Import the GitHub repository in Vercel. Use Next.js preset, root directory `./`, default output directory, and `npm run build`.
