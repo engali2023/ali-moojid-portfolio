@@ -146,3 +146,92 @@ html { scroll-behavior: smooth; }
     width: 66%;
   }
 }
+
+/* Responsive polish: desktop, tablet and mobile */
+.single-page-shell,
+.single-page-shell * { min-width: 0; }
+.single-page-shell { width: 100%; overflow-x: clip; }
+.standalone-card { min-height: clamp(500px, 68vh, 760px); }
+.standalone-main { width: min(100%, 760px); }
+.standalone-body { overflow-wrap: anywhere; }
+.standalone-tags span, .standalone-tags a { max-width: 100%; overflow-wrap: anywhere; }
+.page-navigation { flex-wrap: wrap; }
+.page-navigation a { text-align: center; }
+
+@media (min-width: 1400px) {
+  .single-page-shell { max-width: 1320px; padding-inline: 34px; }
+  .standalone-card { min-height: min(74vh, 820px); }
+  .standalone-cover .standalone-main { max-width: 66%; }
+  .single-page-shell[dir="rtl"] .standalone-cover .standalone-main { width: 60%; max-width: 60%; }
+}
+
+@media (min-width: 701px) and (max-width: 1024px) {
+  .single-page-shell { padding: 22px 20px 18px; }
+  .standalone-card { min-height: 560px; padding: clamp(34px, 5vw, 54px); }
+  .standalone-main h1 { font-size: clamp(48px, 7.5vw, 82px); line-height: 1.04; }
+  .standalone-cover .standalone-main { max-width: 62%; }
+  .standalone-cover .standalone-main h1 { font-size: clamp(68px, 10vw, 112px); }
+  .single-page-shell[dir="rtl"] .standalone-cover .standalone-main { width: 60%; max-width: 60%; }
+  .single-page-shell[dir="rtl"] .standalone-cover .standalone-main h1 { font-size: clamp(62px, 9vw, 98px); }
+  .standalone-photo { width: 40%; height: 84%; right: 3%; }
+  .single-page-shell[dir="rtl"] .standalone-photo { left: 3%; width: 40%; }
+  .standalone-body { font-size: clamp(17px, 1.8vw, 21px); }
+  .page-navigation { gap: 8px; }
+  .page-navigation a { padding: 10px 12px; }
+}
+
+@media (max-width: 700px) {
+  .single-page-shell { padding: max(10px, env(safe-area-inset-top)) 10px max(12px, env(safe-area-inset-bottom)); }
+  .page-topbar { align-items: flex-start; flex-wrap: wrap; gap: 8px; margin: 4px 2px 12px; line-height: 1.5; }
+  .brand-mini { max-width: 58%; overflow-wrap: anywhere; }
+  .top-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .standalone-card { min-height: auto; padding: 58px 22px 42px; border-radius: 16px; }
+  .standalone-main { width: 100%; max-width: 100%; }
+  .standalone-main h1 { font-size: clamp(40px, 11vw, 62px); line-height: 1.04; overflow-wrap: anywhere; margin-bottom: 14px; }
+  .standalone-script { font-size: clamp(16px, 4.6vw, 21px); line-height: 1.4; overflow-wrap: anywhere; }
+  .standalone-subtitle { font-size: clamp(21px, 6vw, 30px); line-height: 1.35; }
+  .standalone-body { max-width: 100%; font-size: 17px; line-height: 1.9; margin-block: 14px; }
+  .standalone-tags { gap: 7px; margin-top: 20px; }
+  .standalone-tags span, .standalone-tags a { padding: 8px 11px; font-size: 12px; line-height: 1.6; }
+  .standalone-items { gap: 9px; margin-top: 20px; }
+  .skill-item { font-size: 16px; line-height: 1.75; padding: 12px; }
+  .timeline-item { padding-bottom: 12px; }
+  .timeline-item h3 { font-size: 20px; line-height: 1.5; overflow-wrap: anywhere; }
+  .timeline-item p { font-size: 15px; line-height: 1.8; }
+  .standalone-index { inset-block-start: 17px; inset-inline-start: 22px; inset-inline-end: 22px; line-height: 1.5; overflow-wrap: anywhere; }
+  .single-page-shell[dir="rtl"] .standalone-index { inset-inline-start: 22px; inset-inline-end: 22px; text-align: right; }
+  .standalone-watermark { inset-inline-end: 16px; bottom: 12px; font-size: 8px; }
+  .page-navigation { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0; }
+  .page-navigation a { padding: 11px 8px; font-size: 11px; line-height: 1.5; }
+  .page-navigation .nav-home { grid-column: 1 / -1; grid-row: 1; }
+  .page-index-links { gap: 6px; margin: 12px 0 16px; }
+  .page-index-links a { width: 30px; height: 30px; }
+  .single-footer { flex-direction: column; gap: 5px; line-height: 1.6; font-size: 8px; }
+  .single-footer span:last-child { max-width: 100%; text-align: start; }
+
+  /* Cover becomes a clear vertical composition on phones, not overlapping text and portrait. */
+  .standalone-cover { min-height: 760px; display: block; padding: 64px 22px 270px; }
+  .standalone-cover .standalone-main,
+  .single-page-shell[dir="rtl"] .standalone-cover .standalone-main { position: relative; z-index: 3; width: 100%; max-width: 100%; margin: 0; }
+  .standalone-cover .standalone-main h1,
+  .single-page-shell[dir="rtl"] .standalone-cover .standalone-main h1 { font-size: clamp(58px, 15.5vw, 92px); line-height: 1.2; letter-spacing: 0; white-space: normal; overflow-wrap: anywhere; max-width: 100%; margin-block: 8px 14px; }
+  .standalone-cover .standalone-script { font-size: clamp(17px, 4.5vw, 22px); }
+  .standalone-cover .standalone-subtitle { font-size: clamp(22px, 6vw, 30px); margin-top: 10px; }
+  .standalone-cover .standalone-body { font-size: 16px; line-height: 1.85; max-width: 100%; margin: 12px 0 0; }
+  .standalone-photo,
+  .single-page-shell[dir="rtl"] .standalone-photo { left: auto; right: 0; bottom: 35px; top: auto; width: min(72%, 330px); height: 37%; z-index: 1; mask-image: linear-gradient(to bottom, #000 58%, transparent 100%); }
+  .standalone-photo img { object-position: 50% 14%; }
+  .cover-footer { left: 20px; right: 20px; bottom: 14px; flex-wrap: wrap; font-size: 7px; letter-spacing: .04em; gap: 5px 12px; }
+  .single-page-shell[dir="rtl"] .cover-footer { direction: rtl; }
+  .standalone-cover .standalone-index { inset-block-start: 18px; }
+}
+
+@media (max-width: 380px) {
+  .single-page-shell { padding-inline: 7px; }
+  .standalone-card { padding-inline: 17px; }
+  .standalone-cover { padding-inline: 17px; min-height: 720px; }
+  .standalone-cover .standalone-main h1,
+  .single-page-shell[dir="rtl"] .standalone-cover .standalone-main h1 { font-size: clamp(52px, 14.5vw, 66px); }
+  .standalone-body { font-size: 16px; }
+  .page-navigation a { font-size: 10px; }
+}
